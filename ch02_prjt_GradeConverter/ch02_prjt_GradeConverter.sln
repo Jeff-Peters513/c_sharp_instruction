@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ch02_prjt_GradeConverter", "ch02_prjt_GradeConverter\ch02_prjt_GradeConverter.csproj", "{3BEC356E-AA7F-4B7D-941C-D32CA864BE00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BEC356E-AA7F-4B7D-941C-D32CA864BE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEC356E-AA7F-4B7D-941C-D32CA864BE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEC356E-AA7F-4B7D-941C-D32CA864BE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEC356E-AA7F-4B7D-941C-D32CA864BE00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83A8A0D3-4423-4653-8FF0-2FD63B37FAB5}
+	EndGlobalSection
+EndGlobal
