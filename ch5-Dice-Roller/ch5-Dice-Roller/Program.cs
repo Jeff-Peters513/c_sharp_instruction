@@ -2,23 +2,25 @@
 
 namespace ch5_Dice_Roller {
     class Program {
+        
         static void Main(string[] args) {
             diplayWelcome();
 
-            int sides1 = 6;
-            int sides2 = 6;
+            int sides1 = 1;
+            int sides2 = 1;
           
             String choice = "y";
             int i = 1;
-            while (choice.Contains("y")|| choice.Contains("Y")) {
+            while (choice.Contains("y") || choice.Contains("Y")) {
                 // get the input from the user
                 if (i <= 1) {
-                    choice = askToRoll(roll);
+                    choice = askToRoll("Roll the Dice? (y/n): ");
                     i++;
                 } else if (i > 1) {
-                    choice = askToContinue(sc);
+                    choice = askToContinue("Roll Again? (y/n): ");
                     i++;
                 }
+
 
                 //business logic call random # generator to get two dice #'s
                 int die1 = getRandomInt(sides1);
@@ -37,28 +39,29 @@ namespace ch5_Dice_Roller {
                 }
                 Console.WriteLine();
 
-            
+            }
                 // Console.WriteLine();
                 Console.Write("Roll again? (y/n): ");
                 choice = Console.ReadLine();
-            }
-
-
-
-
-
-
-
+            
 
             Console.WriteLine("Bye");
         }
 
+
         private static int getRandomInt2(int sides2) {
-            throw new NotImplementedException();
+            Random random = new Random();
+            int rand6 = random.Next(6);
+            double d = rand6 * sides2; // d is >= 0.0 and < limit
+            int randomInt = (int)d; // convert double to int
+            randomInt++; // int is >= 1 and <= limit
+            return randomInt;
         }
 
         private static int getRandomInt(int sides1) {
-            double d = Math.random() * sides1; // d is >= 0.0 and < limit
+            Random random = new Random();
+            int rand6 = random.Next(6);
+            double d = rand6 * sides1; // d is >= 0.0 and < limit
             int randomInt = (int)d; // convert double to int
             randomInt++; // int is >= 1 and <= limit
             return randomInt;
@@ -69,14 +72,14 @@ namespace ch5_Dice_Roller {
             Console.WriteLine();
         }
 
-        public static String askToRoll(roll) {
-            Console.Write("Roll the Dice? (y/n): ");
+        public static String askToRoll(string prompt) {
+            Console.Write(prompt);
             String choice = Console.ReadLine();
             return choice;
         }
 
-        public static String askToContinue(sc) {
-           Console.Write("Roll Again? (y/n): ");
+        public static String askToContinue(string prompt) {
+           Console.Write(prompt);
             String choice = Console.ReadLine();
             return choice;
         }
