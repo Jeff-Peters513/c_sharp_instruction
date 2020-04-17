@@ -23,8 +23,10 @@ namespace ch12_Wizard_Inventory {
 				DisplayMenu();
 
 				// prompt and collect user input
-				command = Jconsole.GetString("Command: ", true);
-
+				//command = Jconsole.GetString("Command: ");
+				Console.Write("Command: ");
+				command = Console.ReadLine();
+				
 				// business logic - going have to display in loop
 				switch (command) {
 					case "show":
@@ -68,6 +70,7 @@ namespace ch12_Wizard_Inventory {
 
 				} catch (Exception e) {
 					Console.WriteLine("Invalid number.");
+					Console.Write(e);
 					continue;
 				}
 				item = inventory[itemNbr-1];
@@ -78,9 +81,6 @@ namespace ch12_Wizard_Inventory {
 
 		private static void DropItem() {
 			//delete item from inventory
-			//int itemNumber = Jconsole.GetInt("Number: ", 0, inventory.Count + 1);
-			//String droppedItem = inventory.remove(itemNumber - 1);
-			//Console.WriteLine(droppedItem + " was dropped.");
 			string item = FindItemByNumber();
 			inventory.Remove(item);
 			Console.WriteLine(item + " removed.\n");
@@ -90,19 +90,14 @@ namespace ch12_Wizard_Inventory {
 
 
 		private static void EditItem() {
-			// edit / update/ change name of item
-			//int itemNumber = Jconsole.GetInt("Number: ", 0, inventory.Count + 1);
-			//String updatedName = Jconsole.GetString("Updated Name: ", true);
-			//inventory.Remove(itemNumber - 1);
-			//inventory.Add(itemNumber - 1, updatedName);
-			//Console.WriteLine("Item number " + itemNumber + " was updated.");
 			string item = FindItemByNumber();
 			int idx = inventory.IndexOf(item);
-			Console.WriteLine("Updated Name: ");
+			Console.Write("Updated Name: ");
 			string updItem = Console.ReadLine();
 			//edit item
 			inventory[idx] = updItem;
-			Console.WriteLine();
+			Console.WriteLine(item+" was updated to " + updItem);
+
 		}		   			 
 			
 			
@@ -112,7 +107,8 @@ namespace ch12_Wizard_Inventory {
 			if (inventory.Count >= 4) {
 				Console.WriteLine("Cannot grab an item. Max limit (4) reached.");
 			} else {
-				string itemName = Jconsole.GetString("Name: ", true);
+				Console.WriteLine("Name: ");
+				string itemName = Console.ReadLine();
 				inventory.Add(itemName);
 				Console.WriteLine(itemName + " was added.");
 			}
@@ -135,6 +131,8 @@ namespace ch12_Wizard_Inventory {
 			menu.Append("drop - Drop (Delete) an Item\n");
 			menu.Append("Exit - Exit program\n");
 			Console.WriteLine(menu);
+			Console.WriteLine();
+
 		}
 
 	}

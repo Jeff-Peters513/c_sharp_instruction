@@ -6,8 +6,9 @@ namespace ch12_Wizard_Inventory {
     class Jconsole {
         // this class is to mimic Java's Console class with standard prompts and data validation etc..
 
-        public static String GetString(String prompt, bool) {
-            return GetString(prompt, false);
+        public static String GetString(String prompt) {
+            string str = "";
+            return str;
         }
 
         public static int GetInt(string prompt) {
@@ -24,7 +25,7 @@ namespace ch12_Wizard_Inventory {
                     success = true;
                 } catch (Exception e) {
                     Console.WriteLine("Invalid # value.");
-                    //Console.WriteLine(e.StackTrace);
+                    Console.WriteLine(e.StackTrace);
                 }
             }
             return nbr;
